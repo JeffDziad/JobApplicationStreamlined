@@ -2,10 +2,401 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Yellowstone National Park Lodges</title>
     <link rel="stylesheet" href="scss/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    <script src="js/countryPopulator.js"></script>
+    <script src="js/eligibility.js"></script>
+    <script src="js/positions.js"></script>
+    <script src="js/experience.js"></script>
+    <script src="js/education.js"></script>
+    <script src="js/confirmation.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
-    <button class="btn btn-primary">Test</button>
+
+<nav class="navbar bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/logo.gif" alt="Yellowstone National Park Lodges">
+        </a>
+    </div>
+</nav>
+
+<div class="container my-5">
+    <div class="card">
+        <ul class="nav nav-tabs bg-primary" style="pointer-events: none;">
+            <li class="nav-item">
+                <a href="#eligibility" class="nav-link active" data-bs-toggle="tab">Eligibility</a>
+            </li>
+            <li class="nav-item">
+                <a href="#personalInformation" class="nav-link" data-bs-toggle="tab">Personal Information</a>
+            </li>
+            <li class="nav-item">
+                <a href="#positions" class="nav-link" data-bs-toggle="tab">Positions</a>
+            </li>
+            <li class="nav-item">
+                <a href="#experience" class="nav-link" data-bs-toggle="tab">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a href="#education" class="nav-link" data-bs-toggle="tab">Education</a>
+            </li>
+            <li class="nav-item">
+                <a href="#confirmation" class="nav-link" data-bs-toggle="tab">Confirmation</a>
+            </li>
+        </ul>
+        <div class="tab-content m-2">
+            <div class="tab-pane active show fade p-3" id="eligibility">
+                <h2>Eligibility</h2>
+                <p>Before starting the application process, please answer the following questions.</p>
+                <div class="d-flex justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="row pb-2">
+                            <div class="col-7 col-lg-8">
+                                <span>Can you provide proof that you are eligible to work in the United States?</span>
+                            </div>
+                            <div class="col-5 col-lg-4  d-flex justify-content-end">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="eligibilityProofRadio"
+                                           id="eligibilityProofRadio1" value="YES">
+                                    <label class="form-check-label" for="eligibilityProofRadio1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="eligibilityProofRadio"
+                                           id="eligibilityProofRadio2" value="NO">
+                                    <label class="form-check-label" for="eligibilityProofRadio2">No</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row pb-2">
+
+                            <div class="col-7 col-lg-8">
+                                <span>Have you ever been convicted of a felony (including any pleas of "guilty" or "no contest")
+                                    OR do you have any outstanding wants or warrants?</span>
+                            </div>
+                            <div class="col-5 col-lg-4 d-flex justify-content-end">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="criminalRadio"
+                                           id="criminalRadio1" value="YES">
+                                    <label class="form-check-label" for="criminalRadio1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="criminalRadio"
+                                           id="criminalRadio2" value="NO">
+                                    <label class="form-check-label" for="criminalRadio2">No</label>
+                                </div>
+                            </div>
+                            <div class="col-12 float-start">
+                                <span class="small">A Background Check is completed on all employees upon arrival to Yellowstone. Note: Conviction of a crime is not an automatic ban to employment - circumstances will be considered.</span>
+                            </div>
+                        </div>
+
+                        <div id="criminalDetailsContainer" style="display: none;" class="form-floating my-3">
+                            <textarea class="form-control" placeholder="Please state details and dates..."
+                                      id="criminalDetails"></textarea>
+                            <label for="criminalDetails">Please state details and dates...</label>
+                        </div>
+                        <button class="btn btn-primary text-white float-end" id="toPersonalInformation">Next ></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade p-3" id="personalInformation">
+                <h2>Personal Information</h2>
+                <p>Please provide us with some information, so we can contact you regarding the next steps towards
+                    employment at Yellowstone National Park Lodges.</p>
+                <div class="d-flex justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Firstname</span>
+                            <input type="text" class="form-control" placeholder="John" aria-label="Firstname">
+                            <span class="input-group-text">Lastname</span>
+                            <input type="text" class="form-control" placeholder="Doe" aria-label="Lastname">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Street</span>
+                            <input type="text" class="form-control" placeholder="1234 StreetName Ave"
+                                   aria-label="Firstname">
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">State/Province</span>
+                                    <input type="text" class="form-control" placeholder="Ex: Wisconsin"
+                                           aria-label="State/Province">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Country</span>
+                                    <select class="form-select countrySelect" aria-label="CountrySelect">
+                                        <option selected disabled>Select Country</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Zipcode</span>
+                            <input type="number" class="form-control" placeholder="12345" aria-label="Zipcode">
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Phone</span>
+                                    <input type="tel" class="form-control" placeholder="0123456789" aria-label="Phone">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Email</span>
+                                    <input type="email" class="form-control" placeholder="myemail@gmail.com"
+                                           aria-label="Email">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary text-white float-start" id="backEligibility">< Back</button>
+                        <button class="btn btn-primary text-white float-end" id="toPosition">Next ></button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade p-3" id="positions">
+                <h2>Positions</h2>
+                <span>Please select up to three positions in order of preference.</span>
+                <div class="row px-5">
+                    <p class="small m-0 p-0">Please Note:</p>
+                    <ul>
+                        <li>
+                            <p class="small m-0 p-0">Asterisks (***) by a job position indicates that little to no experience is needed.</p>
+                        </li>
+                        <li>
+                            <p class="small m-0 p-0">The letters D.L. indicates the position requires a valid Driver's License.</p>
+                        </li>
+                        <li>
+                            <p class="small m-0 p-0">If you desire an internship, please select Internship as your first choice. (Found in Miscellaneous)</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="row mt-3">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle w-100" type="button" id="positionsDropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Select Positions
+                                </button>
+                                <ul class="dropdown-menu px-2 w-100" aria-labelledby="positionsDropdown" id="positionsDropdownList">
+                                    <!-- Positions Rendered Here -->
+                                    <!-- Format: <li> <label><input type="checkbox" value="POSITION NAME">POSITION NAME</label></li>-->
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row-2 my-2">
+                            <button class="btn btn-primary text-white float-start" id="backPersonalInformation">< Back</button>
+                            <button class="btn btn-primary text-white float-end" id="toExperience">Next ></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade p-3" id="experience">
+                <h2>Experience</h2>
+                <div class="d-flex justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Employer Name</th>
+                                    <th scope="col">Supervisor</th>
+                                    <th scope="col">Position</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="experienceTableBody">
+
+                            </tbody>
+                        </table>
+                        <button id="addWorkExperienceBtn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#workExperienceModal">+ Add Work Experience</button>
+                        <div class="row-2 my-2">
+                            <button class="btn btn-primary text-white float-start" id="backPosition">< Back</button>
+                            <button class="btn btn-primary text-white float-end" id="toEducation">Next ></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experience Modal -->
+                <div class="modal fade" id="workExperienceModal" tabindex="-1" aria-labelledby="workExperienceModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="workExperienceModalLabel">Work Experience</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="workExperienceForm">
+                                    <span id="experienceId" class="d-none" data-exid="0"></span>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Employer Name</span>
+                                        <input id="workExpModalEmployerName" type="text" class="form-control" placeholder="Ex: Google"
+                                               aria-label="Employer Name">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Street</span>
+                                        <input id="workExpModalStreet" type="text" class="form-control" placeholder="1234 StreetName Ave"
+                                               aria-label="Street">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">City</span>
+                                        <input id="workExpModalCity" type="text" class="form-control" placeholder="Ex: Milwaukee"
+                                               aria-label="City">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">State/Province</span>
+                                                <input id="workExpModalState" type="text" class="form-control" placeholder="Ex: Wisconsin"
+                                                       aria-label="State/Province">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">Country</span>
+                                                <select id="workExpModalCountry" class="form-select countrySelect" aria-label="CountrySelect">
+                                                    <option selected disabled>Select Country</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Zipcode</span>
+                                        <input id="workExpModalZipcode" type="number" class="form-control" placeholder="12345" aria-label="Zipcode">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Phone</span>
+                                        <input id="workExpModalPhone" type="tel" class="form-control" placeholder="0123456789" aria-label="Phone">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Position</span>
+                                        <input id="workExpModalPosition" type="text" class="form-control" placeholder="Ex: Project Manager"
+                                               aria-label="Position">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Supervisor Name</span>
+                                        <input id="workExpModalSupervisorName" type="text" class="form-control" placeholder="John Doe"
+                                               aria-label="Supervisor Name">
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-6">
+                                            <label for="workExpModalStartDate">Start</label>
+                                            <input id="workExpModalStartDate" class="form-control" type="date" />
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="workExpModalEndDate">End</label>
+                                            <input id="workExpModalEndDate" class="form-control" type="date" />
+                                        </div>
+                                    </div>
+                                    <div class="form-floating my-3">
+                                        <textarea id="workExpModalDuties" class="form-control" placeholder="Please describe your work duties..."></textarea>
+                                        <label for="workExpModalDuties">Please describe your work duties...</label>
+                                    </div>
+                                    <div class="form-floating my-3">
+                                        <textarea class="form-control" placeholder="Reason for leaving..."
+                                                  id="workExpModalReasonToLeave"></textarea>
+                                        <label for="workExpModalReasonToLeave">Reason for leaving...</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button id="saveExperienceBtn" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="tab-pane fade p-3" id="education">
+                <h2>Education</h2>
+                <!--
+                Make a Table that has inputs inside each cell for school name, location, degree, field of study, and hasGraduated
+                Dynamically add a row when a button is pressed, and remove a row when another is.
+                -->
+                <div class="d-flex justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">School Name</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Degree Received</th>
+                                    <th scope="col">Graduated</th>
+                                </tr>
+                            </thead>
+                            <tbody id="educationTableBody">
+
+                            </tbody>
+                        </table>
+                        <button id="addEducationBtn" class="btn btn-primary">+ Add Education</button>
+                        <div class="row-2 my-2">
+                            <button class="btn btn-primary text-white float-start" id="backExperience">< Back</button>
+                            <button class="btn btn-primary text-white float-end" id="toConfirmation">Next ></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tab-pane fade p-3" id="confirmation">
+                <h2>Confirmation</h2>
+                <div class="d-flex justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <p>Please read and agree to the following agreement before submitting your application:</p>
+                        <p class="small px-3">
+                            By submitting this form, I declare my answers to the questions on this application and any
+                            attachment, i.e. resume, etc., are true and accurate. Attachments CANNOT be sent with this
+                            online application. You must send attachments to us by e-mail or fax. FAX:(307) 344-5441
+                            E-mail: info@yellowstonejobs.com. I authorize Xanterra Parks and Resorts and any accredited
+                            public or private investigative agency or individual conducting my background investigation
+                            to obtain and release any information relating to my background from individuals, schools,
+                            employers, criminal justice agencies, governmental agencies, financial institutions, credit
+                            bureaus, licensing agencies, or other sources of information in accordance with applicable
+                            laws for purposes of making a determination of my suitability or eligibility for employment.
+                            If employed, I understand that I must abide by the company's rules and regulations. I hereby
+                            consent to a drug screen as a condition of employment, if required. I understand this
+                            document, any offer of employment or any other employment related information does not
+                            constitute an employment contract. I understand employment is not a specified term and is
+                            at the mutual consent of the employee and company. Accordingly, either the employee or the
+                            company can terminate employment at will, with or without cause, at any time.
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="agreementCheckbox">
+                            <label class="form-check-label" for="agreementCheckbox">
+                                I have read and agree with the agreement above.
+                            </label>
+                        </div>
+
+                        <div class="my-2">
+                            <button class="btn btn-primary text-white float-start" id="backEducation">< Back</button>
+                            <button class="btn btn-success text-white float-end" style="display: none;" id="submitApplication" onclick="window.location.href='completed.html'">Submit Application</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

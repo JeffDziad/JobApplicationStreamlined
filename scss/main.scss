@@ -1,3 +1,17 @@
-$primary: #234;
+$primary: #293D5F;
+
+.nav-link {
+  border-radius: 0 !important;
+  color: white !important;
+}
+
+.nav-link.active {
+  color: black !important;
+}
+
+#positionsDropdownList {
+  max-height: 250px;
+  overflow-y: scroll;
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
